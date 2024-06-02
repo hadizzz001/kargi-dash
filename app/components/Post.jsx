@@ -90,14 +90,14 @@ const Post = ({ post }) => {
 
   const getOptionsForSecondSelect = (firstSelectValue) => {
     switch (firstSelectValue) {
-      case 'Cards':
-        return ['Business Cards', 'Reviews Cards', 'Social Media Cards', 'Medical ID Cards'];
-      case 'Tags':
-        return ['Pets Tags', 'Reviews Tags', 'Social Media Tags', 'Medical ID Tags'];
-      case 'Stands':
-        return ['Review Stands', 'Menu Stands'];
-      case 'Stickers':
-        return ['Business Cards Stickers', 'Reviews Stickers', 'Social Media Stickers', 'Medical ID Stickers'];
+      case 'Appliances':
+        return ['--Choose Type--', 'Home Appliances', 'Outdoor Appliances', 'Office Appliances', 'Miscellaneous Appliances'];
+      case 'Fashion':
+        return ['--Choose Type--', 'Men Wear', 'Women Wear', 'Baby Wear'];
+      case 'Household':
+        return ['--Choose Type--', 'Furniture', 'Home Supplies'];
+      case 'Picnic Items':
+        return ['--Choose Type--', 'Picnic Supplies'];
       default:
         return [];
     }
@@ -201,12 +201,12 @@ const Post = ({ post }) => {
 
 
 
-            <select name="category" value={firstSelectValue} onChange={handleFirstSelectChange} style={{ width: "100%", height: "40px" }}  >
-
-              <option value="Cards">Cards</option>
-              <option value="Tags">Tags</option>
-              <option value="Stands">Stands</option>
-              <option value="Stickers">Stickers</option>
+<select name="category" value={firstSelectValue} onChange={handleFirstSelectChange} style={{ width: "100%", height: "40px" }}  >
+              <option value="0" selected>--Choose Category--</option>
+              <option value="Appliances">Appliances</option>
+              <option value="Fashion">Fashion</option>
+              <option value="Household">Household</option>
+              <option value="Picnic Items">Picnic Items</option>
             </select>
 
             <br />

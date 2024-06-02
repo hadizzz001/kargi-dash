@@ -1,5 +1,5 @@
 import Post from '../components/Post'
-
+ 
 const PostList = ({ posts }) => {
   return (
     <div className='grid grid-cols-1 md:grid-cols-3 gap-4 place-items-start'>
