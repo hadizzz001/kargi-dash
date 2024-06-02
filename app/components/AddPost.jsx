@@ -103,14 +103,14 @@ const AddPost = () => {
 
   const getOptionsForSecondSelect = (firstSelectValue) => {
     switch (firstSelectValue) {
-      case 'Cards':
-        return ['--Choose Type--', 'Business Cards', 'Reviews Cards', 'Social Media Cards', 'Medical ID Cards'];
-      case 'Tags':
-        return ['--Choose Type--', 'Pets Tags', 'Reviews Tags', 'Social Media Tags', 'Medical ID Tags'];
-      case 'Stands':
-        return ['--Choose Type--', 'Review Stands', 'Menu Stands'];
-      case 'Stickers':
-        return ['--Choose Type--', 'Business Cards Stickers', 'Reviews Stickers', 'Social Media Stickers', 'Medical ID Stickers'];
+      case 'Appliances':
+        return ['--Choose Type--', 'Home Appliances', 'Outdoor Appliances', 'Office Appliances', 'Miscellaneous Appliances'];
+      case 'Fashion':
+        return ['--Choose Type--', 'Men Wear', 'Women Wear', 'Baby Wear'];
+      case 'Household':
+        return ['--Choose Type--', 'Furniture', 'Home Supplies'];
+      case 'Picnic Items':
+        return ['--Choose Type--', 'Picnic Supplies'];
       default:
         return [];
     }
@@ -138,7 +138,7 @@ const AddPost = () => {
       <button
         onClick={() => setModalOpen(true)}
         className="text-white p-3 cursor-pointer"
-        style={{ background: "#ea6a2b" }}
+        style={{ background: "#ab695d" }}
       >
         Add New Item
       </button>
@@ -146,7 +146,7 @@ const AddPost = () => {
       <button
         onClick={() => push("/reservation")}
         className="text-white p-3 cursor-pointer"
-        style={{ marginLeft: "1em", background: "#ea6a2b" }}
+        style={{ marginLeft: "1em", background: "#ab695d" }}
       >
         View Orders
       </button>
@@ -188,10 +188,10 @@ const AddPost = () => {
 
             <select name="category" value={firstSelectValue} onChange={handleFirstSelectChange} style={{ width: "100%", height: "40px" }}  >
               <option value="0" selected>--Choose Category--</option>
-              <option value="Cards">Cards</option>
-              <option value="Tags">Tags</option>
-              <option value="Stands">Stands</option>
-              <option value="Stickers">Stickers</option>
+              <option value="Appliances">Appliances</option>
+              <option value="Fashion">Fashion</option>
+              <option value="Household">Household</option>
+              <option value="Picnic Items">Picnic Items</option>
             </select>
 
             <br />
@@ -210,10 +210,26 @@ const AddPost = () => {
             </select>
 
 
-            <Dropzone HandleImagesChange={handleImgChange} className='mt-10 border border-neutral-200 p-16' />
+            <Dropzone HandleImagesChange={handleImgChange} className='mt-10 border border-neutral-200 p-16'  />
 
 
-            <button type="submit" className="px-5 py-2 mt-3" style={{ background: "#ea6a2b" }} disabled={active}>
+            <style
+  dangerouslySetInnerHTML={{
+    __html:
+      "\n.uploadcare--widget__button_type_open { \n    background-color: #ab695d !important;\n}\n"
+  }}
+/> 
+
+<style
+  dangerouslySetInnerHTML={{
+    __html:
+      "   \n\n.uploadcare--button_size_big { \n    background-color: #ab695d !important;\n}\n"
+  }}
+/>
+
+
+
+            <button type="submit" className="px-5 py-2 mt-3" style={{ background: "#ab695d" }} disabled={active}>
               Submit
             </button>
           </form> 

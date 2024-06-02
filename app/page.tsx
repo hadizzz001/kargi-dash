@@ -55,7 +55,7 @@ export default function Home() {
     //     <button
     //       type="submit"
     //       className="p-2 text-white w-fit rounded"
-    //       style={{background:"#ea6a2b"}}
+    //       style={{background:"#ab695d"}}
     //     >
     //       Submit
     //     </button>
@@ -72,7 +72,7 @@ export default function Home() {
             <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
               <div className="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12" id="contentMob">
                 <img
-                  src="https://res.cloudinary.com/duppvjinz/image/upload/v1700912468/ewehtbukhvujafl3zm6d.png"
+                  src="https://ucarecdn.com/13ff6806-3fbb-48c9-832b-c8a76aaedf2b/logo.png"
                   className="w-50"
                   alt="Sample image"
                 />
@@ -123,7 +123,7 @@ export default function Home() {
                     <button
                       type="submit"
                       className="inline-block rounded  px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                      style={{ background: "#ea6a2b" }}
+                      style={{ background: "#ab695d" }}
                     >
                       Login
                     </button>

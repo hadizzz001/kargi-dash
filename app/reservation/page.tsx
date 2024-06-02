@@ -16,59 +16,39 @@ const page = () => {
 
     const a = async () => {
         const b = await fetchTemp1() 
-        setTemp(b) 
+        setTemp(b)
     }
+
     useEffect(() => {
-        a() 
+        a()
     }, [])
 
- 
-
-
-
-    // const calculateFinalTotal = (allTemp1) => {
-    //     if (allTemp1) {
-    //         console.log(allTemp1);
-            
-    //     //   const result = allTemp1.reduce(
-    //     //     (acc, post) => {
-    //     //       const price = parseInt(post.price);
-    //     //       const qty = post.quantity;
-    //     //       acc.totalPrice += isNaN(price) || isNaN(qty) ? 0 : price * qty;
-    //     //       acc.totalItems += isNaN(qty) ? 0 : qty;
-    //     //       return acc;
-    //     //     },
-    //     //     { totalPrice: 0, totalItems: 0 }
-    //     //   );
+if(allTemp)
+    console.log(allTemp);
     
-    //     //   return result;
-    //     }
+
+
+
+    const calculateFinalTotal = (allTemp1) => {
+        if (allTemp1) {
+          const result = allTemp1.reduce(
+            (acc, post) => {
+              const price = parseInt(post.price);
+              const qty = post.quantity;
+              acc.totalPrice += isNaN(price) || isNaN(qty) ? 0 : price * qty;
+              acc.totalItems += isNaN(qty) ? 0 : qty;
+              return acc;
+            },
+            { totalPrice: 0, totalItems: 0 }
+          );
     
-    //     return { totalPrice: 0, totalItems: 0 };
-    //   };
- 
-
-
-
-    const calculateFinalTotal = (cart) => {
-        if (cart) {
-            const result = cart.reduce(
-                (acc: any, post: any) => {
-                    const price = parseInt(post.price);
-                    const qty = post.quantity;
-                    acc.totalPrice += isNaN(price) || isNaN(qty) ? 0 : price * qty;
-                    acc.totalItems += isNaN(qty) ? 0 : qty;
-                    return acc;
-                },
-                { totalPrice: 0, totalItems: 0 }
-            );
-
-            return result;
+          return result;
         }
-
+    
         return { totalPrice: 0, totalItems: 0 };
-    };
+      };
  
+
 
 
 
@@ -79,7 +59,7 @@ const page = () => {
     return (
         <>
             <Link href='/dashboard'>
-                <button type="button" className="text-white rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2" style={{ background: "#ea6a2b" }}>
+                <button type="button" className="text-white rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2" style={{ background: "#234012" }}>
                     <img src="https://res.cloudinary.com/dixtwo21g/image/upload/v1699388330/next/dmhmwrpyxkjzjzk5iurq.png" width={14} style={{ color: "white" }} alt="" />
                 </button>
                 Return Home
@@ -100,7 +80,7 @@ const page = () => {
                             allTemp.map((post: any, index: any) => (
                                 <tr>
                                     <td>{post.id}</td>
-                                    <td>${calculateFinalTotal(post.user).totalPrice + post.info.shipping}</td>
+                                    <td>${(calculateFinalTotal(post.user).totalPrice + 4).toFixed(2)}</td>
                                     <td>{post.createdAt}</td>
                                     <td><Link className="text-blue-700 mr-3" href={`/order?id=${post.id}`}>View</Link></td>
                                 </tr>

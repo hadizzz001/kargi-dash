@@ -28,11 +28,8 @@ const page = () => {
         setShowDetails(Array(b.info.length).fill(false));
     }
     useEffect(() => {
-        a() 
+        a()
     }, [])
-
-
- 
 
 
 
@@ -45,7 +42,18 @@ const page = () => {
     };
 
 
- 
+
+    // const calculateFinalTotal = () => {
+    //     if (allTemp1 && allTemp1.info) {
+    //         return allTemp1.info.reduce((total, post) => {
+    //             const price = parseInt(post.price);
+    //             const qty = post.quantity;
+    //             return total + (isNaN(price) || isNaN(qty) ? 0 : price * qty);
+    //         }, 0);
+    //     }
+    //     return 0;
+    // };
+
 
 
 
@@ -84,7 +92,7 @@ const page = () => {
     return (
         <>
             <Link href='/dashboard'>
-                <button type="button" className="text-white rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2" style={{ background: "#ea6a2b" }}>
+                <button type="button" className="text-white rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2" style={{ background: "#234012" }}>
                     <img src="https://res.cloudinary.com/dixtwo21g/image/upload/v1699388330/next/dmhmwrpyxkjzjzk5iurq.png" width={14} style={{ color: "white" }} alt="" />
                 </button>
                 Return Home
@@ -101,8 +109,7 @@ const page = () => {
                                             <th className="text-left font-semibold">Product</th>
                                             <th className="text-left font-semibold">Price</th>
                                             <th className="text-left font-semibold">Quantity</th>
-                                            <th className="text-left font-semibold">Total</th>
-                                            <th className="text-left font-semibold">Customization</th>
+                                            <th className="text-left font-semibold">Total</th> 
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -129,30 +136,10 @@ const page = () => {
                                                         </td>
                                                         <td className="py-4">${temp.quantity * +temp.price}</td>
 
-                                                        <td className="py-4"><button onClick={() => handleShowMore(index)}>Show More</button></td>
-
-                                                    </tr>
-
-                                                    <tr>
-                                                        {showDetails[index] && (
-                                                            <td className="py-4" style={{ maxWidth: "80px" }}>
-                                                            {Object.keys(temp.additionalInfo).map((key) => (
-                                                                <li key={key}>
-                                                                    {key === 'imgz' ? (
-                                                                        <span>Front cover: <Link target='_blank' href={temp.additionalInfo[key]}>View</Link></span>
-                                                                    ) : key === 'imgzz' ? (
-                                                                        <span>Back cover: <Link target='_blank' href={temp.additionalInfo[key]}>View</Link></span>
-                                                                    ) : key === 'pdf' ? (
-                                                                        <Link target='_blank' href={temp.additionalInfo[key]}>View PDF</Link>
-                                                                    ) : (
-                                                                        `${key.charAt(0).toUpperCase() + key.slice(1)}: ${temp.additionalInfo[key]}`
-                                                                    )}
-                                                                </li>
-                                                            ))}
-                                                        </td>
                                                         
-                                                        )}
+
                                                     </tr>
+ 
 
 
                                                 </>
@@ -179,48 +166,32 @@ const page = () => {
                                     <>
                                         <div className="flex justify-between mb-2">
                                             <span>Name</span>
-                                            <span>{allTemp1.info.fname} {allTemp1.user.lname}</span>
+                                            <span>{allTemp1.info.fname} {allTemp1.info.lname}</span>
                                         </div>
                                         <div className="flex justify-between mb-2">
                                             <span>Phone</span>
                                             <span>{allTemp1.info.phone}</span>
-                                        </div>
+                                        </div> 
                                         <div className="flex justify-between mb-2">
-                                            <span>Email</span>
-                                            <span>{allTemp1.info.email}</span>
-                                        </div>
-                                        <div className="flex justify-between mb-2">
-                                            <span>State</span>
-                                            <span>{allTemp1.info.state}</span>
-                                        </div>
-                                        <div className="flex justify-between mb-2">
-                                            <span>City</span>
-                                            <span>{allTemp1.info.suburb}</span>
-                                        </div>
-                                        <div className="flex justify-between mb-2">
-                                            <span>address</span>
-                                            <span>{allTemp1.info.street}</span>
-                                        </div>
-                                        <div className="flex justify-between mb-2">
-                                            <span>Country</span>
-                                            <span>{allTemp1.info.country}</span>
-                                        </div>
-                                        <div className="flex justify-between mb-2">
-                                            <span>ZIP Code</span>
-                                            <span>{allTemp1.info.postcode}</span>
-                                        </div>
-                                        <div className="flex justify-between mb-2">
-                                            <span>Shipping</span>
-                                            <span>${allTemp1.info.shipping}</span>
-                                        </div>
+                                            <span>Address</span>
+                                            <span>{allTemp1.info.address}</span>
+                                        </div> 
                                         <hr className="my-2" />
                                         <div className="flex justify-between mb-2">
                                             <span className="font-semibold">Total Items</span>
                                             <span className="font-semibold">{finalTotal.totalItems}</span>
                                         </div>
                                         <div className="flex justify-between mb-2">
+                                            <span className="font-semibold">Subtotal</span>
+                                            <span className="font-semibold">${finalTotal.totalPrice.toFixed(2)}</span>
+                                        </div>
+                                        <div className="flex justify-between mb-2">
+                                            <span className="font-semibold">Delivery fees</span>
+                                            <span className="font-semibold">$4.00</span>
+                                        </div>
+                                        <div className="flex justify-between mb-2">
                                             <span className="font-semibold">Total Amount</span>
-                                            <span className="font-semibold">${finalTotal.totalPrice + allTemp1.info.shipping}</span>
+                                            <span className="font-semibold">${(finalTotal.totalPrice + 4).toFixed(2)}</span>
                                         </div>
                                     </>
                                 ) : (

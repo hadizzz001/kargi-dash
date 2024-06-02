@@ -11,34 +11,13 @@ interface IImageForm {
 
 const ImageForm = ({defaultValue,HandleImagesChange}:IImageForm) => {
  const [load,setLoad] = useState(true)
-//  useEffect(() => {
-//   setLoad(true)
-//  }, [])
+ 
  const [imgs,
   setImages] = useState < string[] > ([])
   return (
         <Box sx={{
             pt: '1.5em'
-        }}>
-            {/* <Typography sx={{
-                mt: '0'
-            }} >Add Images</Typography> */}
-            {/* <Widget
-            clearable
-                multiple
-                onFileSelect={async(group : any) => {
-                if (group) {
-                    const files = await Promise.all(group.files());
-                    const urls = files.map((file: { cdnUrl: any; }) => file.cdnUrl);
-                    // console.log('urls: ', urls);
-                    HandleImagesChange(urls)
-                }
-            }}
-
-                imagesOnly={true}
-                multipleMax={15}
-
-                publicKey={`${'858e578317283c5254d2'}`}/> */}
+        }}> 
 
 
 {load && <Widget
@@ -68,7 +47,7 @@ const ImageForm = ({defaultValue,HandleImagesChange}:IImageForm) => {
                                     setImages(immg) 
                                     
                                 }}
-                                    publicKey="59e99ae48b72d2a99d54"/>}
+                                    publicKey="c9dc899e33771c13d946"/>}
 
         </Box>
     )

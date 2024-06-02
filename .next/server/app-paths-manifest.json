@@ -1,0 +1,8 @@
+{
+  "/reservation/page": "app/reservation/page.js",
+  "/order/page": "app/order/page.js",
+  "/api/posts/route": "app/api/posts/route.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/api/order/route": "app/api/order/route.js",
+  "/api/auth/me/route": "app/api/auth/me/route.js"
+}
