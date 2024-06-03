@@ -187,11 +187,11 @@ const page = () => {
                                         </div>
                                         <div className="flex justify-between mb-2">
                                             <span className="font-semibold">Delivery fees</span>
-                                            <span className="font-semibold">$4.00</span>
+                                            <span className="font-semibold">$3.00</span>
                                         </div>
                                         <div className="flex justify-between mb-2">
                                             <span className="font-semibold">Total Amount</span>
-                                            <span className="font-semibold">${(finalTotal.totalPrice + 4).toFixed(2)}</span>
+                                            <span className="font-semibold">${(finalTotal.totalPrice + 3).toFixed(2)}</span>
                                         </div>
                                     </>
                                 ) : (

@@ -80,7 +80,7 @@ if(allTemp)
                             allTemp.map((post: any, index: any) => (
                                 <tr>
                                     <td>{post.id}</td>
-                                    <td>${(calculateFinalTotal(post.user).totalPrice + 4).toFixed(2)}</td>
+                                    <td>${(calculateFinalTotal(post.user).totalPrice + 3).toFixed(2)}</td>
                                     <td>{post.createdAt}</td>
                                     <td><Link className="text-blue-700 mr-3" href={`/order?id=${post.id}`}>View</Link></td>
                                 </tr>
