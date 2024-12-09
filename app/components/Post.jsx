@@ -13,9 +13,7 @@ const Post = ({ post }) => {
   const [postToEdit, setPostToEdit] = useState(post);
   const [active, setActive] = useState(false)
   const [active1, setActive1] = useState(false)
-  const [firstSelectValue, setFirstSelectValue] = useState('');
-  const [secondSelectValue, setSecondSelectValue] = useState('');
-  const [secondSelectOptions, setSecondSelectOptions] = useState([]);
+  const [firstSelectValue, setFirstSelectValue] = useState(''); 
   const [value1, setValue1] = useState('');
   const [imgs, setImgs] = useState([''])
 
@@ -82,27 +80,10 @@ const Post = ({ post }) => {
   const handleFirstSelectChange = (event) => {
     const selectedValue = event.target.value;
     setFirstSelectValue(selectedValue);
-    setActive1(true)
-    const optionsForSecondSelect = getOptionsForSecondSelect(selectedValue);
-    setSecondSelectOptions(optionsForSecondSelect); 
-    setSecondSelectValue(optionsForSecondSelect[0]);
+    setActive1(true) 
   };
 
-  const getOptionsForSecondSelect = (firstSelectValue) => {
-    switch (firstSelectValue) {
-      case 'Appliances':
-        return ['--Choose Type--', 'Home Appliances', 'Outdoor Appliances', 'Office Appliances', 'Miscellaneous Appliances'];
-      case 'Fashion':
-        return ['--Choose Type--', 'Men Wear', 'Women Wear', 'Baby Wear'];
-      case 'Household':
-        return ['--Choose Type--', 'Furniture', 'Home Supplies'];
-      case 'Picnic Items':
-        return ['--Choose Type--', 'Picnic Supplies'];
-      default:
-        return [];
-    }
-  };
-
+ 
 
 
   useEffect(() => { 
@@ -111,15 +92,7 @@ const Post = ({ post }) => {
     } 
   }, [firstSelectValue])
 
-
-
-  useEffect(() => { 
-    if (secondSelectValue){ 
-      setPostToEdit((prevState) => ({ ...prevState, type: "" + secondSelectValue }));
-    } 
-  }, [secondSelectValue])
-
-
+ 
 
   useEffect(() => { 
     if (!(imgs.includes(""))){ 
@@ -148,8 +121,7 @@ const Post = ({ post }) => {
   return (
     <div className="bg-slate-200 p-3 min-h-full min-w-full" key={post.id}>
       <h1 className="text-2xl font-bold">Title : {post.title}</h1>
-      <b>Category : {post.category}</b><br />
-      <b>Type : {post.type}</b><br />
+      <b>Category : {post.category}</b><br /> 
       <b>Price($) : {post.price}</b><br />
       <p style={{ width: "150px", overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>{post.description}</p><br />
 
@@ -203,28 +175,14 @@ const Post = ({ post }) => {
 
 <select name="category" value={firstSelectValue} onChange={handleFirstSelectChange} style={{ width: "100%", height: "40px" }}  >
               <option value="0" selected>--Choose Category--</option>
-              <option value="Appliances">Appliances</option>
-              <option value="Fashion">Fashion</option>
-              <option value="Household">Household</option>
-              <option value="Picnic Items">Picnic Items</option>
+              <option value="Sale">Sale</option>
+              <option value="Rent">Rent</option> 
             </select>
 
             <br />
 
 
-            {active1 && ( 
-              <select value={secondSelectValue} onChange={(event) => setSecondSelectValue(event.target.value)} style={{ width: "100%", height: "40px" }} className="mt-3">
-                {secondSelectOptions.map((option) => (
-                  <option
-                    key={option}
-                    value={option}
-                  >
-                    {option}
-                  </option>
-                ))}
-              </select>
-            )}
-
+         
             <Dropzone HandleImagesChange={handleImgChange} className='mt-10 border border-neutral-200 p-16' />
 
 

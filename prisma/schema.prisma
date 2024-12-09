@@ -16,19 +16,9 @@ model Post {
   description String
   img String[]
   price String
-  category String
-  type String
+  category String 
 }
 
-
-
-
-model Order {
-  id  String @id @default(auto()) @map("_id") @db.ObjectId
-  user Json
-  info Json
-  createdAt String
-}
-
+ 
 
  
