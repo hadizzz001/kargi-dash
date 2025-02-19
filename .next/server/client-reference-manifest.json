@@ -56,6 +56,14 @@
         "async": false
       }
     },
+    "(app-client)/./app/page.tsx": {
+      "*": {
+        "id": "(sc_client)/./app/page.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
     "(app-client)/./app/components/AddPost.jsx": {
       "*": {
         "id": "(sc_client)/./app/components/AddPost.jsx",
@@ -67,6 +75,14 @@
     "(app-client)/./app/components/Post.jsx": {
       "*": {
         "id": "(sc_client)/./app/components/Post.jsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./app/components/Upload.js": {
+      "*": {
+        "id": "(sc_client)/./app/components/Upload.js",
         "name": "*",
         "chunks": [],
         "async": false
@@ -259,6 +275,14 @@
       ],
       "async": false
     },
+    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Kargihome\\app - dash\\app\\page.tsx": {
+      "id": "(app-client)/./app/page.tsx",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
     "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Kargihome\\app - dash\\app\\components\\AddPost.jsx": {
       "id": "(app-client)/./app/components/AddPost.jsx",
       "name": "*",
@@ -269,6 +293,14 @@
     },
     "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Kargihome\\app - dash\\app\\components\\Post.jsx": {
       "id": "(app-client)/./app/components/Post.jsx",
+      "name": "*",
+      "chunks": [
+        "app/dashboard/page:static/chunks/app/dashboard/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Kargihome\\app - dash\\app\\components\\Upload.js": {
+      "id": "(app-client)/./app/components/Upload.js",
       "name": "*",
       "chunks": [
         "app/dashboard/page:static/chunks/app/dashboard/page.js"
@@ -309,11 +341,7 @@
     }
   },
   "entryCSSFiles": {
-    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Kargihome\\app - dash\\app\\dashboard\\page": {
-      "modules": [],
-      "files": []
-    },
-    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Kargihome\\app - dash\\app\\dashboard\\layout": {
+    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Kargihome\\app - dash\\app\\page": {
       "modules": [],
       "files": []
     },
@@ -325,6 +353,14 @@
       "files": [
         "static/css/app/layout.css"
       ]
+    },
+    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Kargihome\\app - dash\\app\\dashboard\\page": {
+      "modules": [],
+      "files": []
+    },
+    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Kargihome\\app - dash\\app\\dashboard\\layout": {
+      "modules": [],
+      "files": []
     }
   }
 }

@@ -5,6 +5,7 @@ import Modal from "./Modal";
 import axios from "axios";
 import { useRouter } from 'next/navigation' 
 import Dropzone from './Dropzone'
+import Upload from './Upload';
 
 
 
@@ -167,7 +168,7 @@ const AddPost = () => {
  
 
 
-            <Dropzone HandleImagesChange={handleImgChange} className='mt-10 border border-neutral-200 p-16'  />
+            <Upload onImagesUpload={handleImgChange} />
 
 
             <style

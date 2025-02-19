@@ -2,8 +2,8 @@
 
 import Modal from "./Modal";
 import axios from "axios";
-import { useRouter } from "next/navigation";
-import Dropzone from './Dropzone'
+import { useRouter } from "next/navigation"; 
+import Upload from './Upload';
 import { useState, useEffect } from "react";
 
 const Post = ({ post }) => {
@@ -183,7 +183,7 @@ const Post = ({ post }) => {
 
 
          
-            <Dropzone HandleImagesChange={handleImgChange} className='mt-10 border border-neutral-200 p-16' />
+            <Upload onImagesUpload={handleImgChange} />
 
 
             <button type="submit" className="px-5 py-2 mt-3" style={{ background: "#ab695d" }} disabled={active}>

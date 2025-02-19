@@ -72,7 +72,7 @@ export default function Home() {
             <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
               <div className="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12" id="contentMob">
                 <img
-                  src="https://ucarecdn.com/2fae4aff-4e02-4ef4-a21d-f5109e0a7a25/logo.jpg"
+                  src="https://res.cloudinary.com/dmycvn4vk/image/upload/v1739958169/lyq175ojdq4eiofw7n3r.jpg"
                   className="w-50"
                   alt="Sample image"
                 />
